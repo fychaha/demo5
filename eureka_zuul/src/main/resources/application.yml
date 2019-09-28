@@ -18,9 +18,9 @@ spring:
   application:
     name: eureka-zuul
   datasource:
-    url: jdbc:mysql://localhost:3306/jwt?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://121.199.28.160:3306/jwt?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   # jdbc-starter 中自带了一个连接池：HikariCP
 mybatis:
