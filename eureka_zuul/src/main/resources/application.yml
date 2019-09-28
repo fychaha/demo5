@@ -1,0 +1,42 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+server:
+  port: 5000
+spring:
+  redis:
+    database: 0
+    host: 121.199.28.160
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+  application:
+    name: eureka-zuul
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # jdbc-starter 中自带了一个连接池：HikariCP
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:dao/*.xml
+
+zuul:
+  routes:
+    demo1:
+      path: /demo1/**
+      serviceId: eureka-pro-demo1
+    demo2:
+      path: /demo2/**
+      serviceId: eureka-pro-demo2
+
+
+
+
+

@@ -1,0 +1,15 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+#    指提交ip信息
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+
+#      这个地方的defaultZone是设置与Eureka Server进行交互的地址
